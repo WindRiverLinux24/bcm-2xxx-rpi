@@ -23,7 +23,7 @@ do_image_wic[depends] += "u-boot:do_deploy"
 
 # multilib support
 MULTILIBS ?= "multilib:lib32"
-DEFAULTTUNE_virtclass-multilib-lib32 ?= "armv7athf-neon"
+DEFAULTTUNE:virtclass-multilib-lib32 ?= "armv7athf-neon"
 
 PREFERRED_PROVIDER_virtual/kernel ??= "linux-yocto"
 PREFERRED_VERSION_linux-yocto ?= "5.10%"

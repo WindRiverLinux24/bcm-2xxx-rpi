@@ -1,6 +1,6 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
-DEPENDS_append_rpi = " rpi-u-boot-scr rpi-bootfiles"
+DEPENDS:append:rpi = " rpi-u-boot-scr rpi-bootfiles"
 
 UBOOT_RPI4_SUPPORT_PATCHES = " \
     file://0001-rpi_4-defconfigs-Add-CONFIG_CMD_BOOT-menu.patch \
@@ -17,22 +17,22 @@ UBOOT_RPI4_SUPPORT_PATCHES = " \
     file://0001-configs-rpi_arm64-Add-CONFIG_ENV_OVERWRITE-in-defcon.patch \
 "
 
-SRC_URI_append_raspberrypi4 = "${UBOOT_RPI4_SUPPORT_PATCHES}"
+SRC_URI:append:raspberrypi4 = "${UBOOT_RPI4_SUPPORT_PATCHES}"
 
 # Also build a specfic qemu-u-boot.bin
 
-do_configure_append_rpi() {
+do_configure:append:rpi() {
     rm -rf ${B}-qemu
     mkdir -p ${B}-qemu
     oe_runmake -C ${S} O=${B}-qemu qemu_arm64_config
 }
 
-do_compile_append_rpi() {
+do_compile:append:rpi() {
     echo ${UBOOT_LOCALVERSION} > ${B}-qemu/.scmversion
     oe_runmake -C ${S} O=${B}-qemu ${UBOOT_MAKE_TARGET}
 }
 
-do_deploy_append_rpi() {
+do_deploy:append:rpi() {
     ocwd=$PWD
     install -D -m 644 ${B}-qemu/${UBOOT_BINARY} ${DEPLOYDIR}/qemu-${UBOOT_IMAGE}
     cd ${DEPLOYDIR}

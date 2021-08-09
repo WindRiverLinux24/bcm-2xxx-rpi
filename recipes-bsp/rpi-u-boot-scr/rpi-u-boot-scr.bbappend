@@ -1,5 +1,5 @@
 EXTERNAL_BOOT_CMD_IN ??= ""
-do_compile_bcm-2xxx-rpi4() {
+do_compile:bcm-2xxx-rpi4() {
     if [ -n "${EXTERNAL_BOOT_CMD_IN}" -a -f "${EXTERNAL_BOOT_CMD_IN}" ]; then
         sed -e 's/@@KERNEL_IMAGETYPE@@/Image/' \
             -e 's/@@KERNEL_BOOTCMD@@/${KERNEL_BOOTCMD}/' \
@@ -14,7 +14,7 @@ do_compile_bcm-2xxx-rpi4() {
     mkimage -A arm -T script -C none -n "Boot script" -d "${WORKDIR}/boot.cmd" boot.scr
 }
 
-do_deploy_bcm-2xxx-rpi4() {
+do_deploy:bcm-2xxx-rpi4() {
     install -d ${DEPLOYDIR}
     if ${@bb.utils.contains('DISTRO_FEATURES', 'ostree', 'true', 'false', d)}; then
         install -m 0644 boot.scr ${DEPLOYDIR}/boot-rpi.scr

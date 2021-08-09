@@ -1,4 +1,4 @@
-MACHINE_FEATURES_append_bcm-2xxx-rpi4 = " vc4graphics"
+MACHINE_FEATURES:append:bcm-2xxx-rpi4 = " vc4graphics"
 
 XSERVER = " \
     xserver-xorg \
@@ -6,7 +6,7 @@ XSERVER = " \
     ${@bb.utils.contains("MACHINE_FEATURES", "vc4graphics", "xf86-video-modesetting", "xf86-video-fbdev", d)} \
 "
 
-PNWHITELIST_openembedded-layer += 'libmms'
+PNWHITELIST:openembedded-layer += 'libmms'
 
 PREFERRED_PROVIDER_virtual/egl = "${@bb.utils.contains("MACHINE_FEATURES", "vc4graphics", "mesa", "userland", d)}"
 PREFERRED_PROVIDER_virtual/libgles2 = "${@bb.utils.contains("MACHINE_FEATURES", "vc4graphics", "mesa", "userland", d)}"
