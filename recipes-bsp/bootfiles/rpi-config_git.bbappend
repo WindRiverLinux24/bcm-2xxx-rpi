@@ -4,5 +4,5 @@ SRC_URI:append:bcm-2xxx-rpi4 = " \
 "
 
 VC4DTBO:bcm-2xxx-rpi4 ?= "vc4-fkms-v3d"
-
+ENABLE_UART:bcm-2xxx-rpi4 ?= "1"
 
