@@ -1,5 +1,5 @@
 require linux-yocto-bcm-2xxx-rpi.inc
 
-KBRANCH:rpi = "standard/bcm-2xxx-rpi"
+KBRANCH:rpi = "v5.16/standard/bcm-2xxx-rpi"
 
-LINUX_VERSION:rpi ?= "5.15+"
+LINUX_VERSION:rpi ?= "5.16+"
