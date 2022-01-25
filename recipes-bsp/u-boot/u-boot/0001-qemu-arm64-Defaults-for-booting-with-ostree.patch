@@ -24,9 +24,9 @@ index 2969e90ca8..8db8eb22c0 100644
 --- a/configs/qemu_arm64_defconfig
 +++ b/configs/qemu_arm64_defconfig
 @@ -50,3 +50,6 @@ CONFIG_SYSRESET_PSCI=y
- CONFIG_USB=y
  CONFIG_USB_EHCI_HCD=y
  CONFIG_USB_EHCI_PCI=y
+ CONFIG_TPM=y
 +CONFIG_MENU=y
 +CONFIG_CMD_BOOTMENU=y
 +CONFIG_PREBOOT="test -n ${fdtcontroladdr} && setenv fdt_addr ${fdtcontroladdr}"
