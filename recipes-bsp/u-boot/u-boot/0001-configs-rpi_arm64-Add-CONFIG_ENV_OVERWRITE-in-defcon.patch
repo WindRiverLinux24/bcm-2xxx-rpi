@@ -29,7 +29,7 @@ index 2639219a1a..cb0efd55ca 100644
 --- a/configs/rpi_arm64_defconfig
 +++ b/configs/rpi_arm64_defconfig
 @@ -20,6 +20,7 @@ CONFIG_CMD_FS_UUID=y
- CONFIG_OF_BOARD=y
+ CONFIG_CMD_FS_UUID=y
  CONFIG_ENV_FAT_DEVICE_AND_PART="0:1"
  CONFIG_ENV_VARS_UBOOT_RUNTIME_CONFIG=y
 +CONFIG_ENV_OVERWRITE=y

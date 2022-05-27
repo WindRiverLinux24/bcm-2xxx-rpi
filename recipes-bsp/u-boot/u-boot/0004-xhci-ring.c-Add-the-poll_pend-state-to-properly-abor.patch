@@ -47,7 +47,7 @@ index a8507266e5..cfefe79221 100644
 - * @param pipe		contains the DIR_IN or OUT , devnum
 - * @param length	length of the buffer
 - * @param buffer	buffer to be read/written based on the request
-- * @return returns 0 if successful else -1 on failure
+- * Return: returns 0 if successful else -1 on failure
 - */
 -int xhci_bulk_tx(struct usb_device *udev, unsigned long pipe,
 -			int length, void *buffer)
