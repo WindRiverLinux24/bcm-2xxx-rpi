@@ -17,12 +17,12 @@ Signed-off-by: Jason Wessel <jason.wessel@windriver.com>
 +CONFIG_CMD_BOOTCOMMAND="run bootcmd_mmc0"
 --- a/include/config_distro_bootcmd.h
 +++ b/include/config_distro_bootcmd.h
-@@ -433,7 +433,7 @@
+@@ -484,7 +484,7 @@
  				"${prefix}${boot_syslinux_conf}; then "   \
  			"echo Found ${prefix}${boot_syslinux_conf}; "     \
  			"run boot_extlinux; "                             \
--			"echo SCRIPT FAILED: continuing...; "             \
-+			"echo SCRIPT EXITED: continuing...; "             \
+-			"echo EXTLINUX FAILED: continuing...; "           \
++			"echo EXTLINUX EXITED: continuing...; "           \
  		"fi\0"                                                    \
  	\
  	"boot_a_script="                                                  \
