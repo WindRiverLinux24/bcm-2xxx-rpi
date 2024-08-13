@@ -23,7 +23,7 @@ This BSP supports the following boards:
 2. Change History
 =================
 
-  - 2023/07 (LINUXPG-1585): WindRiver Linux LTS1023, support Raspberry Pi 4 Model B board.
+  - 2024/08 (LINUXPG-2309): WindRiver Linux LTS1024, support Raspberry Pi 4 Model B board.
 
 3. BSP Features
 ===============
@@ -93,6 +93,6 @@ in a different environment it may possibly have some issues.
 
 	Processor:              BCM2711 (Cortex-A72)
 	BootLoader:             Raspberry bootloader/GPU firmware and U-Boot
-	BootLoader Version:     Raspberrypi firmware Release version "20220830"
-				U-Boot 2023.01 (Jan 09 2023 - 16:07:33 +0000)
+	BootLoader Version:     Raspberrypi firmware Release version "20240229"
+				U-Boot 2024.01 (Jan 08 2024 - 15:37:48 +0000)
 
