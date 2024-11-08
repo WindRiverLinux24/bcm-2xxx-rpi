@@ -1,0 +1,36 @@
+From 821517e8cd3d3cdfa7247f63e9dcf701da3de597 Mon Sep 17 00:00:00 2001
+From: Rajeshkumar Ramasamy <rajeshkumar.ramasamy@windriver.com>
+Date: Mon, 4 Nov 2024 08:40:08 +0000
+Subject: [PATCH] brcmfmac: Fix implicit declaration build error
+
+The following build error was triggered because of header file not included
+
+fwil.h: error: implicit declaration of function 'brcmf_dbg'
+
+This happens from the commit c3cfcf51b4e01 ("wifi: brcmfmac: export firmware
+interface functions"). Included the header file debug.h to fix it.
+
+Upstream-Status: Pending
+
+Signed-off-by: Rajeshkumar Ramasamy <rajeshkumar.ramasamy@windriver.com>
+Signed-off-by: Saravanan.K.S <saravanan.kadambathursubramaniyam@windriver.com>
+---
+ drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.h b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.h
+index 31e080e4da66..ab3d6cfcb02b 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.h
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwil.h
+@@ -6,6 +6,8 @@
+ #ifndef _fwil_h_
+ #define _fwil_h_
+ 
++#include "debug.h"
++
+ /*******************************************************************************
+  * Dongle command codes that are interpreted by firmware
+  ******************************************************************************/
+-- 
+2.35.5
+
